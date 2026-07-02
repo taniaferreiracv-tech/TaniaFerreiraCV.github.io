@@ -283,11 +283,14 @@
             display: none;
         }
         body.lang-en .lang-content.lang-en {
-            display: block;
+            display: inline-block;
         }
         body.lang-de .lang-content.lang-de {
-            display: block;
+            display: inline-block;
         }
+        /* Specific treatment for list items & layout containers to keep block flow */
+        body.lang-en ul.lang-content.lang-en, body.lang-en div.lang-content.lang-en { display: block; }
+        body.lang-de ul.lang-content.lang-de, body.lang-de div.lang-content.lang-de { display: block; }
         
         /* --- RESPONSIVE LAYOUT (MOBILE) --- */
         @media (max-width: 900px) {
@@ -326,11 +329,12 @@
                 font-size: 10pt !important;
             }
             .lang-switcher {
-                display: none !important; /* Hide language selector during print */
+                display: none !important;
             }
-            /* Explicitly layout the active localized structural block to guarantee output */
-            body.lang-en .lang-content.lang-en { display: block !important; }
-            body.lang-de .lang-content.lang-de { display: block !important; }
+            body.lang-en .lang-content.lang-en { display: inline-block !important; }
+            body.lang-de .lang-content.lang-de { display: inline-block !important; }
+            body.lang-en ul.lang-content.lang-en { display: block !important; }
+            body.lang-de ul.lang-content.lang-de { display: block !important; }
             
             header, .section-container, .section-container.gray-bg {
                 background: #ffffff !important;
@@ -363,9 +367,8 @@
         }
     </style>
 </head>
-<body class="lang-en"> <!-- Defaulting directly to English execution layout -->
+<body class="lang-en">
 
-    <!-- Top Navigation Interface for Language Alternation -->
     <div class="lang-switcher">
         <button class="lang-btn active" onclick="switchLanguage('en')">EN</button>
         <button class="lang-btn" onclick="switchLanguage('de')">DE</button>
@@ -389,8 +392,10 @@
     <!-- ==================== EXPERIENCE SECTIONS ==================== -->
     <section class="section-container white-bg">
         <div class="section-title">
-            <h2 class="lang-content lang-en">Experience</h2>
-            <h2 class="lang-content lang-de">Berufserfahrung</h2>
+            <h2>
+                <span class="lang-content lang-en">Experience</span>
+                <span class="lang-content lang-de">Berufserfahrung</span>
+            </h2>
         </div>
         
         <div class="timeline">
@@ -401,10 +406,15 @@
                     <span class="lang-content lang-de">10/2025 — Heute<br><small>Düsseldorf, Vor Ort & Remote</small></span>
                 </div>
                 <div class="timeline-content">
-                    <h3 class="lang-content lang-en">Freelance / Interim Consultant</h3>
-                    <h3 class="lang-content lang-de">Freelance / Interim Consultant</h3>
+                    <h3>
+                        <span class="lang-content lang-en">Freelance / Interim Consultant</span>
+                        <span class="lang-content lang-de">Freelance / Interim Consultant</span>
+                    </h3>
                     
-                    <span class="company class-en">Freelance Practice</span>
+                    <span class="company">
+                        <span class="lang-content lang-en">Freelance Practice</span>
+                        <span class="lang-content lang-de">Freiberufliche Tätigkeit</span>
+                    </span>
                     
                     <div class="timeline-details">
                         <ul class="lang-content lang-en">
@@ -428,8 +438,10 @@
                     <span class="lang-content lang-de">09/2021 — 01/2025<br><small>Düsseldorf</small></span>
                 </div>
                 <div class="timeline-content">
-                    <h3 class="lang-content lang-en">Director of Product Management</h3>
-                    <h3 class="lang-content lang-de">Director of Product Management</h3>
+                    <h3>
+                        <span class="lang-content lang-en">Director of Product Management</span>
+                        <span class="lang-content lang-de">Director of Product Management</span>
+                    </h3>
                     
                     <span class="company">Choreograph (WPP)</span>
                     
@@ -457,8 +469,10 @@
                     <span class="lang-content lang-de">11/2018 — 09/2021<br><small>Düsseldorf</small></span>
                 </div>
                 <div class="timeline-content">
-                    <h3 class="lang-content lang-en">Senior Solutions & Platform Manager</h3>
-                    <h3 class="lang-content lang-de">Senior Solutions & Platform Manager</h3>
+                    <h3>
+                        <span class="lang-content lang-en">Senior Solutions & Platform Manager</span>
+                        <span class="lang-content lang-de">Senior Solutions & Platform Manager</span>
+                    </h3>
                     
                     <span class="company">GroupM (WPP)</span>
                     
@@ -486,8 +500,10 @@
                     <span class="lang-content lang-de">07/2015 — 10/2018<br><small>Frankfurt</small></span>
                 </div>
                 <div class="timeline-content">
-                    <h3 class="lang-content lang-en">Process Management Consultant (Retail Excellence)</h3>
-                    <h3 class="lang-content lang-de">Process Management Consultant (Retail Excellence)</h3>
+                    <h3>
+                        <span class="lang-content lang-en">Process Management Consultant (Retail Excellence)</span>
+                        <span class="lang-content lang-de">Process Management Consultant (Retail Excellence)</span>
+                    </h3>
                     
                     <span class="company">Spark44 GmbH (Jaguar Land Rover)</span>
                     
@@ -517,8 +533,10 @@
                     <span class="lang-content lang-de">07/2015 — 10/2018<br><small>Frankfurt</small></span>
                 </div>
                 <div class="timeline-content">
-                    <h3 class="lang-content lang-en">Digital Account & Project Manager</h3>
-                    <h3 class="lang-content lang-de">Digital Account & Project Manager</h3>
+                    <h3>
+                        <span class="lang-content lang-en">Digital Account & Project Manager</span>
+                        <span class="lang-content lang-de">Digital Account & Project Manager</span>
+                    </h3>
                     
                     <span class="company">Spark44 GmbH (Jaguar Land Rover)</span>
                     
@@ -544,8 +562,10 @@
                     <span class="lang-content lang-de">07/2011 — 10/2014<br><small>London & Brüssel</small></span>
                 </div>
                 <div class="timeline-content">
-                    <h3 class="lang-content lang-en">Senior Account Manager</h3>
-                    <h3 class="lang-content lang-de">Senior Account Manager</h3>
+                    <h3>
+                        <span class="lang-content lang-en">Senior Account Manager</span>
+                        <span class="lang-content lang-de">Senior Account Manager</span>
+                    </h3>
                     
                     <span class="company">IgnitionOne</span>
                     
@@ -577,8 +597,10 @@
                     <span class="lang-content lang-de">2007 — 2011<br><small>Dublin, Irland</small></span>
                 </div>
                 <div class="timeline-content">
-                    <h3 class="lang-content lang-en">Freelance Account Manager & Event Planner</h3>
-                    <h3 class="lang-content lang-de">Freiberuflicher Account Manager & Eventplaner</h3>
+                    <h3>
+                        <span class="lang-content lang-en">Freelance Account Manager & Event Planner</span>
+                        <span class="lang-content lang-de">Freiberuflicher Account Manager & Eventplaner</span>
+                    </h3>
                     
                     <span class="company">Various Projects</span>
                     
@@ -600,8 +622,10 @@
     <!-- ==================== EDUCATION SECTION ==================== -->
     <section class="section-container white-bg">
         <div class="section-title">
-            <h2 class="lang-content lang-en">Education</h2>
-            <h2 class="lang-content lang-de">Ausbildung</h2>
+            <h2>
+                <span class="lang-content lang-en">Education</span>
+                <span class="lang-content lang-de">Ausbildung</span>
+            </h2>
         </div>
         <div class="timeline">
             <div class="timeline-item no-toggle">
@@ -610,8 +634,10 @@
                     <span class="lang-content lang-de">Bachelor of Arts</span>
                 </div>
                 <div class="timeline-content">
-                    <h3 class="lang-content lang-en">Communication and Multimedia</h3>
-                    <h3 class="lang-content lang-de">Kommunikation und Multimedia</h3>
+                    <h3>
+                        <span class="lang-content lang-en">Communication and Multimedia</span>
+                        <span class="lang-content lang-de">Kommunikation und Multimedia</span>
+                    </h3>
                     <span class="company">Instituto Superior da Maia - ISMAI (Portugal)</span>
                 </div>
             </div>
@@ -621,13 +647,17 @@
     <!-- ==================== SKILLS / EXTRA SECTIONS ==================== -->
     <section class="section-container white-bg">
         <div class="section-title">
-            <h2 class="lang-content lang-en">Skills & Core Info</h2>
-            <h2 class="lang-content lang-de">Kompetenzen</h2>
+            <h2>
+                <span class="lang-content lang-en">Skills & Core Info</span>
+                <span class="lang-content lang-de">Kompetenzen</span>
+            </h2>
         </div>
         <div class="skills-grid">
             <div class="skill-group">
-                <h3 class="lang-content lang-en">Key Skills</h3>
-                <h3 class="lang-content lang-de">Kernkompetenzen</h3>
+                <h3>
+                    <span class="lang-content lang-en">Key Skills</span>
+                    <span class="lang-content lang-de">Kernkompetenzen</span>
+                </h3>
                 
                 <ul class="lang-content lang-en">
                     <li>Product lifecycle ownership, from idea to delivery</li>
@@ -646,8 +676,10 @@
             </div>
             
             <div class="skill-group">
-                <h3 class="lang-content lang-en">Languages</h3>
-                <h3 class="lang-content lang-de">Sprachen</h3>
+                <h3>
+                    <span class="lang-content lang-en">Languages</span>
+                    <span class="lang-content lang-de">Sprachen</span>
+                </h3>
                 
                 <ul class="lang-content lang-en">
                     <li><strong>Portuguese:</strong> Mother tongue</li>
@@ -666,8 +698,10 @@
             </div>
             
             <div class="skill-group">
-                <h3 class="lang-content lang-en">Tools & Frameworks</h3>
-                <h3 class="lang-content lang-de">Tools & Frameworks</h3>
+                <h3>
+                    <span class="lang-content lang-en">Tools & Frameworks</span>
+                    <span class="lang-content lang-de">Tools & Frameworks</span>
+                </h3>
                 <div class="tag-container">
                     <span class="tag">JIRA</span>
                     <span class="tag">Confluence</span>
@@ -680,8 +714,10 @@
             </div>
             
             <div class="skill-group">
-                <h3 class="lang-content lang-en">Interests & Adaptability</h3>
-                <h3 class="lang-content lang-de">Interessen & Flexibilität</h3>
+                <h3>
+                    <span class="lang-content lang-en">Interests & Adaptability</span>
+                    <span class="lang-content lang-de">Interessen & Flexibilität</span>
+                </h3>
                 
                 <div class="highlight-item lang-content lang-en">
                     <strong>Travel and Adaptation</strong>
@@ -728,7 +764,6 @@
 
     <!-- ==================== JAVASCRIPT LOGIC ARCHITECTURE ==================== -->
     <script>
-        // Interactive Toggle logic for Accordion style cards
         function toggleCard(cardElement) {
             if(cardElement.classList.contains('no-toggle')) return;
 
@@ -744,12 +779,9 @@
             }
         }
 
-        // Language Switching Engine
         function switchLanguage(lang) {
-            // Update body layout class tokens
             document.body.className = 'lang-' + lang;
             
-            // Adjust top button interface visual balance
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.classList.remove('active');
                 if(btn.innerText.toLowerCase() === lang) {
@@ -757,7 +789,6 @@
                 }
             });
 
-            // Recalculate max-height limits on currently opened accordion modules
             document.querySelectorAll('.timeline-item.open').forEach(item => {
                 const details = item.querySelector('.timeline-details');
                 if (details) {
@@ -766,7 +797,6 @@
             });
         }
 
-        // DOM Lifecycle initialization parameters
         window.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.timeline-item.open').forEach(item => {
                 const details = item.querySelector('.timeline-details');
