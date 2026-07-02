@@ -1,319 +1,542 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tania Ferreira | Product & Project Manager</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --bg-light-gray: #ecebeb;
-            --bg-white: #ffffff;
-            --primary-green: #4b7766;
-            --text-dark: #2c3230;
-            --text-muted: #656d6a;
-            --progress-bg: #b9b6b3;
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tania Ferreira | Product & Project Manager</title>
+    <!-- Premium Editorial Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-light-gray: #ecebeb;
+            --bg-white: #ffffff;
+            --primary-green: #4b7766;
+            --text-dark: #2c3230;
+            --text-muted: #656d6a;
+            --progress-bg: #b9b6b3;
+        }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            color: var(--text-dark);
-            background-color: var(--bg-white);
-            line-height: 1.6;
-        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-white);
+            line-height: 1.6;
+        }
 
-        /* --- HEADER SECTION --- */
-        header {
-            background-color: var(--bg-light-gray);
-            padding: 80px 10%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 80px;
-        }
+        /* --- HEADER SECTION --- */
+        header {
+            background-color: var(--bg-light-gray);
+            padding: 80px 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 80px;
+        }
 
-        .profile-container {
-            width: 380px;
-            height: 380px;
-            overflow: hidden;
-            flex-shrink: 0;
-        }
+        .profile-container {
+            width: 380px;
+            height: 380px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
 
-        .profile-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: grayscale(10%);
-        }
+        /* Placeholder image mimicking layout of image_6bd302.png */
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(10%);
+        }
 
-        .header-text {
-            max-width: 500px;
-        }
+        .header-text {
+            max-width: 500px;
+        }
 
-        .subtitle {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--text-muted);
-            margin-bottom: 10px;
-            font-weight: 500;
-        }
+        .subtitle {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
 
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            color: var(--primary-green);
-            font-weight: 400;
-            margin-bottom: 15px;
-        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--primary-green);
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
 
-        .contact-info {
-            font-size: 0.9rem;
-            color: var(--text-dark);
-            line-height: 1.8;
-        }
+        .contact-info {
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+        .contact-info a {
+            color: var(--primary-green);
+            text-decoration: none;
+            font-weight: 500;
+        }
 
-        /* --- SECTION GRID SYSTEM --- */
-        .section-container {
-            padding: 100px 10%;
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 60px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
+        /* --- SECTION GRID SYSTEM --- */
+        .section-container {
+            padding: 100px 10%;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
 
-        .section-container.white-bg {
-            background-color: var(--bg-white);
-        }
+        .section-container.white-bg {
+            background-color: var(--bg-white);
+        }
 
-        .section-container.gray-bg {
-            background-color: var(--bg-light-gray);
-            grid-template-columns: 1fr;
-            text-align: center;
-            padding: 120px 15%;
-        }
+        .section-container.gray-bg {
+            background-color: var(--bg-light-gray);
+            grid-template-columns: 1fr;
+            text-align: center;
+            padding: 120px 15%;
+        }
 
-        .section-title h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: var(--primary-green);
-            font-weight: 400;
-            line-height: 1.2;
-        }
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary-green);
+            font-weight: 400;
+            line-height: 1.2;
+        }
 
-        /* --- TIMELINE / EXPERIENCE --- */
-        .timeline {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-        }
+        /* --- TIMELINE / EXPERIENCE --- */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
 
-        .timeline-item {
-            display: grid;
-            grid-template-columns: 120px 1fr;
-            gap: 30px;
-        }
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 30px;
+        }
 
-        .time-period {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            font-weight: 500;
-            padding-top: 2px;
-        }
+        .time-period {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            padding-top: 2px;
+        }
 
-        .timeline-content h3 {
-            font-size: 1.1rem;
-            color: var(--primary-green);
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
+        .timeline-content h3 {
+            font-size: 1.1rem;
+            color: var(--primary-green);
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
 
-        .timeline-content .company {
-            font-size: 0.95rem;
-            font-style: italic;
-            color: var(--text-dark);
-            margin-bottom: 8px;
-            display: block;
-        }
+        .timeline-content .company {
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            display: block;
+        }
 
-        .timeline-content ul {
-            list-style-type: none;
-        }
+        .timeline-content ul {
+            list-style-type: none;
+        }
 
-        .timeline-content li {
-            font-size: 0.9rem;
-            color: var(--text-dark);
-            margin-bottom: 6px;
-            position: relative;
-            padding-left: 12px;
-        }
-        .timeline-content li::before {
-            content: "•";
-            color: var(--primary-green);
-            position: absolute;
-            left: 0;
-        }
+        .timeline-content li {
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+            position: relative;
+            padding-left: 12px;
+        }
+        .timeline-content li::before {
+            content: "•";
+            color: var(--primary-green);
+            position: absolute;
+            left: 0;
+        }
 
-        /* --- SKILLS & PROFICIENCIES --- */
-        .skills-section {
-            padding: 100px 10%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
+        /* --- SKILLS & PROFICIENCIES --- */
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(280px,1fr));
+    gap:45px;
+}
 
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(280px, 1fr));
-            gap: 45px;
-        }
+.skill-group h3{
+    font-size:1.1rem;
+    color:#3d7d69;
+    margin-bottom:18px;
+    letter-spacing:.5px;
+}
 
-        .skill-group h3 {
-            font-size: 1.1rem;
-            color: #3d7d69;
-            margin-bottom: 18px;
-            letter-spacing: .5px;
-        }
+.skill-group ul{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
 
-        .skill-group ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+.skill-group ul li{
+    position:relative;
+    padding-left:20px;
+    margin-bottom:12px;
+    line-height:1.6;
+}
 
-        .skill-group ul li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 12px;
-            line-height: 1.6;
-        }
+.skill-group ul li::before{
+    content:"•";
+    color:#3d7d69;
+    position:absolute;
+    left:0;
+    font-size:18px;
+}
 
-        .skill-group ul li::before {
-            content: "•";
-            color: #3d7d69;
-            position: absolute;
-            left: 0;
-            font-size: 18px;
-        }
+.tag-container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
 
-        .tag-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
+.tag{
+    background:#edf5f2;
+    color:#3d7d69;
+    padding:8px 14px;
+    border-radius:50px;
+    font-size:.92rem;
+    border:1px solid rgba(61,125,105,.15);
+}
 
-        .tag {
-            background: #edf5f2;
-            color: #3d7d69;
-            padding: 8px 14px;
-            border-radius: 50px;
-            font-size: .92rem;
-            border: 1px solid rgba(61,125,105,.15);
-        }
+.highlight-item{
+    margin-bottom:22px;
+}
 
-        .highlight-item {
-            margin-bottom: 22px;
-        }
+.highlight-item strong{
+    display:block;
+    font-size:1.1rem;
+    color:#3d7d69;
+    margin-bottom:5px;
+}
 
-        .highlight-item strong {
-            display: block;
-            font-size: 1.1rem;
-            color: #3d7d69;
-            margin-bottom: 5px;
-        }
+.highlight-item span{
+    color:#555;
+    line-height:1.6;
+}
 
-        .highlight-item span {
-            color: #555;
-            line-height: 1.6;
-        }
+        /* --- TESTIMONIAL / QUOTE --- */
+        .quote-text {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            font-weight: 300;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 25px auto;
+        }
 
-        /* --- TESTIMONIAL / QUOTE --- */
-        .quote-text {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 1.4rem;
-            color: var(--text-dark);
-            font-weight: 300;
-            line-height: 1.8;
-            max-width: 800px;
-            margin: 0 auto 25px auto;
-        }
+        .quote-author {
+            font-size: 0.95rem;
+            color: var(--primary-green);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
 
-        .quote-author {
-            font-size: 0.95rem;
-            color: var(--primary-green);
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
+        .quote-author span {
+            font-weight: 400;
+            color: var(--text-muted);
+            display: block;
+            margin-top: 4px;
+        }
 
-        .quote-author span {
-            font-weight: 400;
-            color: var(--text-muted);
-            display: block;
-            margin-top: 4px;
-        }
+        /* --- RESPONSIVE LAYOUT (MOBILE) --- */
+        @media (max-width: 900px) {
+            header {
+                flex-direction: column;
+                padding: 50px 5%;
+                text-align: center;
+                gap: 40px;
+            }
+            .section-container {
+                grid-template-columns: 1fr;
+                padding: 60px 5%;
+                gap: 30px;
+            }
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 5px;
+            }
+            .time-period {
+                margin-bottom: 5px;
+            }
+        }
 
-        /* --- RESPONSIVE LAYOUT (MOBILE) --- */
-        @media (max-width: 900px) {
-            header {
-                flex-direction: column;
-                padding: 50px 5%;
-                text-align: center;
-                gap: 40px;
-            }
-            .section-container, .skills-section {
-                grid-template-columns: 1fr;
-                padding: 60px 5%;
-                gap: 30px;
-            }
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-            .timeline-item {
-                grid-template-columns: 1fr;
-                gap: 5px;
-            }
-            .time-period {
-                margin-bottom: 5px;
-            }
-        }
-
-        /* --- MAXIMUM ATS COMPATIBILITY MODE ON PRINT --- */
-        @media print {
-            body {
-                background: #ffffff !important;
-                color: #000000 !important;
-                font-size: 10pt !important;
-            }
-            header, .section-container, .section-container.gray-bg, .skills-section {
-                background: #ffffff !important;
-                padding: 20px 0 !important;
-                display: block !important;
-            }
-            .profile-container {
-                display: none !important;
-            }
-            h1, .section-title h2, .timeline-content h3, .quote-author {
-                color: #000000 !important;
-            }
-            .timeline-item {
-                display: block !important;
-                margin-bottom: 20px !important;
-                page-break-inside: avoid;
-            }
-            .time-period {
-                font-weight: bold !important;
-                margin-bottom: 2px !important;
-            }
-        }
-    </style>
+        /* --- MAXIMUM ATS COMPATIBILITY MODE ON PRINT (CTRL+P) --- */
+        @media print {
+            body {
+                background: #ffffff !important;
+                color: #000000 !important;
+                font-size: 10pt !important;
+            }
+            header, .section-container, .section-container.gray-bg {
+                background: #ffffff !important;
+                padding: 20px 0 !important;
+                display: block !important;
+            }
+            .profile-container {
+                display: none !important;
+            }
+            h1, .section-title h2, .timeline-content h3, .quote-author {
+                color: #000000 !important;
+            }
+            .timeline-item {
+                display: block !important;
+                margin-bottom: 20px !important;
+                page-break-inside: avoid;
+            }
+            .time-period {
+                font-weight: bold !important;
+                margin-bottom: 2px !important;
+            }
+            .progress-bar-container {
+                border: 1px solid #000000 !important;
+                background: #ffffff !important;
+                height: 8px !important;
+            }
+            .progress-fill {
+                background: #000000 !important;
+            }
+            .quote-text {
+                font-size: 11pt !important;
+                font-style: italic !important;
+            }
+        }
+    </style>
 </head>
 <body>
+
+    <!-- HEADER BLOCK -->
+    <header>
+        <div class="profile-container">
+            <!-- Swap src with your actual hosted image path on GitHub later -->
+            <img class="profile-img" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600" alt="Tania Ferreira Profile Background">
+        </div>
+        <div class="header-text">
+            <p class="subtitle">Product | Project Manager</p>
+            <h1>Tania Ferreira</h1>
+            <div class="contact-info">
+                <p>40237 Düsseldorf, Germany (Onsite & Remote)</p>
+                <p>taniaferreira.cv@gmail.com</p>
+                <p>+49 (0) 15510079734</p>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- EXPERIENCE  -->
+    <section class="section-container white-bg">
+        <div class="section-title">
+            <h2>Experience</h2>
+        </div>
+        <div class="timeline">
+            
+            <!-- Freelance -->
+            <div class="timeline-item">
+                <div class="time-period">2025 — Pres.</div>
+                <div class="timeline-content">
+                    <h3>Freelance / Interim Consultant</h3>
+                    <span class="company">Independent Practice — Düsseldorf</span>
+                    <ul>
+                        <li>Positioned for interim product and project leadership extensions following 10+ years driving delivery cycles within global marketing groups.</li>
+                        <li>Sustaining team delivery momentum, navigating restructurings, and managing cross-functional alignment.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Choreograph -->
+            <div class="timeline-item">
+                <div class="time-period">2021 — 2025</div>
+                <div class="timeline-content">
+                    <h3>Director of Product Management</h3>
+                    <span class="company">Choreograph (WPP Group)</span>
+                    <ul>
+                        <li>Led development pathways for predictive customer profiling engines scaling data frameworks.</li>
+                        <li>Managed an independent team of Product Managers through structural implementation lifecycles.</li>
+                        <li>Embedded formal agile tracking infrastructure, balancing backlog dependencies and multi-market releases.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- GroupM -->
+            <div class="timeline-item">
+                <div class="time-period">2018 — 2021</div>
+                <div class="timeline-content">
+                    <h3>Senior Solutions & Platform Manager</h3>
+                    <span class="company">GroupM (WPP Group)</span>
+                    <ul>
+                        <li>Scaled proprietary data strategy architectures across 50+ localized agency networks.</li>
+                        <li>Synthesized core user requirements into structured engineering pipelines for main roadmap deployment.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Spark44 Consultant -->
+            <div class="timeline-item">
+                <div class="time-period">2015 — 2018</div>
+                <div class="timeline-content">
+                    <h3>Process Management Consultant (Retail Excellence)</h3>
+                    <span class="company">Spark44 GmbH (Jaguar Land Rover Account)</span>
+                    <ul>
+                        <li>Mapped six localized European lead lifecycles across dealerships, enterprise databases, and live activations.</li>
+                        <li>Restructured workflow strategies and CRM architecture to unblock multi-channel data silhouettes.</li>
+                    </ul>
+                </div>
+            </div>
+<!-- IgnitionOne -->
+            <div class="timeline-item">
+                <div class="time-period">07/2011 — 10/2014</div>
+                <div class="timeline-content">
+                    <h3>Senior Account Manager</h3>
+                    <span class="company">IgnitionOne — London & Brussels</span>
+                    <ul>
+                        <li>Started as an Account Manager (Jul 2011 – Jan 2012), responsible for client management and coordination in the UK, Italy, and Brazil.</li>
+                        <li>Promoted to Senior Account Manager (from Feb 2012), driving strategic product development based on user feedback and A/B testing.</li>
+                        <li>Collected user stories and client feedback to define high-impact product enhancements.</li>
+                        <li>Proposed and tested new features through structured A/B testing frameworks.</li>
+                        <li>Worked with technical teams to implement changes that significantly improved conversion and engagement.</li>
+                        <li>Supported pre-sales, training, and retention through consultative client management.</li>
+                        <li>Recommended new workflows, CRM integration, and database connections to improve transparency.</li>
+                        <li>Developed improved conversion practices within existing channels to strengthen lead retention and sales tracking.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Freelance Projects -->
+            <div class="timeline-item">
+                <div class="time-period">2007 — 2011</div>
+                <div class="timeline-content">
+                    <h3>Freelance Account Manager & Event Planner</h3>
+                    <span class="company">Various Projects — Dublin, Ireland</span>
+                    <ul>
+                        <li>Spearheaded advertising, branding, and cultural events, including gallery exhibitions and local marketing campaigns.</li>
+                        <li>Coordinated PR activities, art curation, and community engagement.</li>
+                    </ul>
+                </div>
+            </div>
+              </div>
+             </section>
+            <!-- Education -->
+            
+    <section class="section-container white-bg">
+        <div class="section-title">
+            <h2>Education </h2>
+        </div>
+             
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="time-period">Bachelor BA</div>
+                <div class="timeline-content">
+                    <h3>Bachelor of Arts in Communication and Multimedia</h3>
+                    <span class="company">Instituto Superior da Maia (ISMAI) — Portugal</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+
+    <section class="section-container white-bg">
+    <div class="section-title">
+        <h2>Skills</h2>
+    </div>
+
+    <div class="skills-grid">
+<div class="skills-grid">
+
+    <div class="skill-group">
+        <h3>Product</h3>
+        <ul>
+            <li>End-to-end Product Lifecycle Ownership</li>
+            <li>Roadmap Planning & Prioritisation</li>
+            <li>Agile Delivery & Sprint Planning</li>
+            <li>Backlog Management</li>
+            <li>User-Centred Product Design</li>
+        </ul>
+    </div>
+
+    <div class="skill-group">
+        <h3>Leadership</h3>
+        <ul>
+            <li>Global Stakeholder Management</li>
+            <li>Cross-functional Team Collaboration</li>
+            <li>B2B Client Relationships</li>
+            <li>Project Delivery</li>
+            <li>International Team Coordination</li>
+        </ul>
+    </div>
+
+    <div class="skill-group">
+        <h3>Tools & Methods</h3>
+        <div class="tag-container">
+            <span class="tag">Jira</span>
+            <span class="tag">Confluence</span>
+            <span class="tag">Agile</span>
+            <span class="tag">Scrum</span>
+            <span class="tag">Lead Generation</span>
+            <span class="tag">Data Analysis</span>
+            <span class="tag">Product Strategy</span>
+        </div>
+    </div>
+
+    <div class="skill-group">
+        <h3>Professional Highlights</h3>
+
+        <div class="highlight-item">
+            <strong>10+ Years</strong>
+            <span>Product & Project Delivery</span>
+        </div>
+
+        <div class="highlight-item">
+            <strong>6 Countries</strong>
+            <span>Lived & Worked Internationally</span>
+        </div>
+
+        <div class="highlight-item">
+            <strong>Languages</strong>
+            <span>Portuguese (Native) · English (Fluent) · Spanish (Upper Intermediate) · German (Conversational) · French (Intermediate)</span>
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</section>
+    <!-- TESTIMONIAL / MOTTO SECTION -->
+    <section class="section-container gray-bg">
+        <div>
+            <p class="quote-text">
+                "I focus on bringing hands-on structure, alignment, and velocity into existing engineering and product operations—leveraging tenured experience managing business interfaces across international borders."
+            </p>
+            <div class="quote-author">
+                Tania Ferreira
+                <span>Senior Product Leader</span>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
