@@ -290,6 +290,33 @@
 
         }
 
+
+        /* By default, keep the details completely hidden */
+.timeline-details {
+    max-height: 0;
+    overflow: hidden;
+    /* Smoothly transition the max-height property over 0.35 seconds */
+    transition: max-height 0.35s ease-out; 
+}
+
+/* Optional styling: Add a rotating arrow hint in the header */
+.timeline-content h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.timeline-content h3::after {
+    content: "▼";
+    font-size: 0.7rem;
+    color: #656d6a; /* Muted color */
+    transition: transform 0.3s ease;
+}
+
+/* When the card has the 'open' class, flip the arrow upside down */
+.timeline-item.open .timeline-content h3::after {
+    transform: rotate(-180deg);
+}
         /* --- SKILLS & PROFICIENCIES --- */
 
         .skills-grid {
@@ -628,27 +655,33 @@
 
             <div class="timeline-item">
 
-                <div class="time-period">2021 — 2025</div>
+                <div class="timeline-item" onclick="toggleCard(this)" style="cursor: pointer;">
+    <div class="time-period">2021 — 2025</div>
+    
+    <div class="timeline-content">
+        <h3>Director of Product Management</h3>
+        <span class="company">Choreograph (WPP Group)</span>
+        
+        <!-- This is the wrapper that hides and shows -->
+        <div class="timeline-details">
+            <ul>
+                <li>Led development pathways for predictive customer profiling engines scaling data frameworks.</li>
+                <li>Managed an independent team of Product Managers through structural implementation lifecycles.</li>
+                <li>Embedded formal agile tracking infrastructure, balancing backlog dependencies and multi-market releases.</li>
+            </ul>
+        </div>
+    </div>
 
-                <div class="timeline-content">
 
-                    <h3>Director of Product Management</h3>
 
-                    <span class="company">Choreograph (WPP Group)</span>
 
-                    <ul>
 
-                        <li>Led development pathways for predictive customer profiling engines scaling data frameworks.</li>
 
-                        <li>Managed an independent team of Product Managers through structural implementation lifecycles.</li>
 
-                        <li>Embedded formal agile tracking infrastructure, balancing backlog dependencies and multi-market releases.</li>
 
-                    </ul>
 
-                </div>
+                
 
-            </div>
 
             <div class="timeline-item">
 
@@ -911,7 +944,32 @@
         </div>
 
     </section>
+<script>
+    function toggleCard(cardElement) {
+        // Toggle the 'open' class on the card container
+        cardElement.classList.toggle('open');
+        
+        // Find the inner details element inside this specific card
+        const details = cardElement.querySelector('.timeline-details');
+        
+        if (cardElement.classList.contains('open')) {
+            // Expand smoothly to its natural content height
+            details.style.maxHeight = details.scrollHeight + "px";
+        } else {
+            // Collapse back to zero
+            details.style.maxHeight = "0px";
+        }
+    }
 
+    window.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.timeline-item.open').forEach(item => {
+            const details = item.querySelector('.timeline-details');
+            if (details) {
+                details.style.maxHeight = details.scrollHeight + "px";
+            }
+        });
+    });
+</script>
 </body>
 
 </html>
