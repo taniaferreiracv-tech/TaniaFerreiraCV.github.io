@@ -1,634 +1,827 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tania Ferreira | Operations & Project Leader</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-light-gray: #ecebeb;
-            --white: #ffffff;
-            --primary-green: #4b7766;
-            --text-dark: #2c3230;
-            --muted: #656d6a;
-            --border-color: #d1d5d3;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tania Ferreira | Operations & Project Leader</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-light-gray: #ecebeb;
+  --bg-white: #ffffff;
+  --primary-green: #4b7766;
+  --text-dark: #2c3230;
+  --text-muted: #656d6a;
+}
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            color: var(--text-dark);
-            background-color: var(--bg-light-gray);
-            line-height: 1.6;
-            padding: 20px;
-        }
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--text-dark);
+  background-color: var(--bg-white);
+  line-height: 1.6;
+}
 
-        .cv-container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: var(--white);
-            padding: 40px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            border-radius: 4px;
-        }
+/* --- LANG SWITCHER STYLING --- */
+.lang-switcher {
+  background-color: var(--bg-light-gray);
+  padding: 20px 10% 0 10%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
 
-        /* --- LANG SWITCHER STYLING --- */
-        .lang-switcher {
-            display: flex;
-            justify-content: flex-end;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
+.lang-btn {
+  background: transparent;
+  border: 1px solid var(--primary-green);
+  color: var(--primary-green);
+  padding: 6px 14px;
+  cursor: pointer;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
 
-        .btn {
-            background: transparent;
-            border: 1px solid var(--border-color);
-            padding: 6px 14px;
-            cursor: pointer;
-            font-size: 0.85rem;
-            border-radius: 4px;
-            transition: all 0.2s ease;
-            font-family: inherit;
-        }
+.lang-btn.active, .lang-btn:hover {
+  background-color: var(--primary-green);
+  color: var(--bg-white);
+}
 
-        .btn:hover {
-            background-color: var(--bg-light-gray);
-        }
+/* --- HEADER SECTION --- */
+header {
+  background-color: var(--bg-light-gray);
+  padding: 60px 10% 80px 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+}
 
-        /* HEADER SECTION */
-        .header-section {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid var(--primary-green);
-            padding-bottom: 30px;
-            margin-bottom: 30px;
-            gap: 20px;
-        }
+.profile-container {
+  width: 340px;
+  height: 340px;
+  overflow: hidden;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 4px solid var(--bg-white);
+}
 
-        .profile-img {
-            width: 130px;
-            height: 160px;
-            object-fit: cover;
-            border-radius: 4px;
-            flex-shrink: 0;
-        }
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-        .header-text h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            color: var(--text-dark);
-            margin-bottom: 5px;
-        }
+.header-text {
+  max-width: 600px;
+}
 
-        .subtitle {
-            font-size: 1.1rem;
-            color: var(--primary-green);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 15px;
-        }
+.subtitle {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
 
-        .contact-info {
-            font-size: 0.9rem;
-            color: var(--muted);
-        }
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  color: var(--primary-green);
+  font-weight: 400;
+  margin-bottom: 10px;
+}
 
-        /* GRID SYSTEM */
-        .sec-grid {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 30px;
-            margin-bottom: 35px;
-        }
+.tagline {
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
 
-        .sec-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
-            color: var(--primary-green);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-weight: 600;
-        }
+.transition-statement {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
 
-        /* TIMELINE / EXPERIENCE */
-        .timeline {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
+.contact-info {
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  line-height: 1.8;
+}
 
-        .job-card {
-            border-left: 2px solid var(--primary-green);
-            padding-left: 15px;
-            cursor: pointer;
-            user-select: none;
-        }
+/* --- SECTION GRID SYSTEM --- */
+.section-container {
+  padding: 80px 10%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 60px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
 
-        .job-card.no-toggle {
-            cursor: default;
-        }
+.section-container.white-bg {
+  background-color: var(--bg-white);
+}
 
-        .job-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-        }
+.section-container.gray-bg {
+  background-color: var(--bg-light-gray);
+  grid-template-columns: 1fr;
+  text-align: center;
+  padding: 80px 15%;
+}
 
-        .job-title {
-            font-weight: 600;
-            font-size: 1.05rem;
-        }
+.section-title h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  color: var(--primary-green);
+  font-weight: 400;
+  line-height: 1.2;
+}
 
-        .company-name {
-            color: var(--muted);
-            font-size: 0.95rem;
-        }
+/* --- TIMELINE / EXPERIENCE --- */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
 
-        .job-period {
-            font-size: 0.85rem;
-            color: var(--muted);
-            text-align: right;
-        }
+.timeline-item {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 30px;
+  cursor: pointer;
+  user-select: none;
+}
 
-        .job-card h3 {
-            margin-top: 5px;
-        }
+.timeline-item.no-toggle {
+  cursor: default;
+  user-select: text;
+}
 
-        .job-card:not(.no-toggle) .job-header::after {
-            content: '▼';
-            font-size: 0.7rem;
-            margin-left: 10px;
-            color: var(--muted);
-            transition: transform 0.3s;
-        }
+.time-period {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  padding-top: 2px;
+}
 
-        .job-card.open .job-header::after {
-            transform: rotate(-180deg);
-        }
+.timeline-content h3 {
+  font-size: 1.1rem;
+  color: var(--primary-green);
+  font-weight: 600;
+  margin-bottom: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-        .hint-text {
-            font-size: 0.8rem;
-            color: var(--muted);
-            font-style: italic;
-            margin-bottom: 15px;
-            display: block;
-        }
+.timeline-item:not(.no-toggle) .timeline-content h3::after {
+  content: "▼";
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  transition: transform 0.3s ease;
+}
 
-        .job-details {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-        }
+.timeline-item.open .timeline-content h3::after {
+  transform: rotate(-180deg);
+}
 
-        .job-card.open .job-details {
-            max-height: 1000px;
-            margin-top: 10px;
-        }
+.timeline-content .company {
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+  display: block;
+}
 
-        .job-details ul {
-            list-style-type: disc;
-            padding-left: 18px;
-        }
+.timeline-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease-out; 
+}
 
-        .job-details li {
-            font-size: 0.9rem;
-            margin-bottom: 6px;
-            color: var(--text-dark);
-        }
+.timeline-content ul {
+  list-style-type: none;
+  padding-top: 8px;
+}
 
-        /* SKILLS PROFILES */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 15px;
-        }
+.timeline-content li {
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+  position: relative;
+  padding-left: 14px;
+}
 
-        .skill-group h4 {
-            font-size: 0.95rem;
-            color: var(--primary-green);
-            margin-bottom: 5px;
-            border-bottom: 1px solid var(--bg-light-gray);
-            padding-bottom: 3px;
-        }
+.timeline-content li::before {
+  content: "•";
+  color: var(--primary-green);
+  position: absolute;
+  left: 0;
+}
 
-        .skill-group p {
-            font-size: 0.88rem;
-            color: var(--text-dark);
-        }
+/* --- SKILLS & PROFICIENCIES --- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  gap: 40px;
+}
 
-        .high-impact {
-            background-color: rgba(75, 119, 102, 0.08);
-            padding: 12px;
-            border-radius: 4px;
-            border-left: 3px solid var(--primary-green);
-            margin-bottom: 15px;
-        }
+.skill-group h3 {
+  font-size: 1.1rem;
+  color: var(--primary-green);
+  margin-bottom: 14px;
+}
 
-        .high-impact strong {
-            color: var(--primary-green);
-        }
+.skill-group ul {
+  list-style: none;
+  padding: 0;
+}
 
-        /* TESTIMONIAL / QUOTE */
-        .quote-box {
-            font-style: italic;
-            border-left: 2px solid var(--primary-green);
-            padding-left: 15px;
-            margin-top: 10px;
-            font-size: 0.9rem;
-            color: var(--muted);
-        }
+.skill-group ul li {
+  position: relative;
+  padding-left: 16px;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
 
-        .quote-author {
-            font-style: normal;
-            font-weight: 600;
-            font-size: 0.8rem;
-            margin-top: 4px;
-            color: var(--text-dark);
-        }
+.skill-group ul li::before {
+  content: "•";
+  color: var(--primary-green);
+  position: absolute;
+  left: 0;
+}
 
-        /* LANGUAGE VISIBILITY ARCHITECTURE (GERMAN DEFAULT) */
-        [lang="en"] { display: none; }
-        [lang="de"] { display: block; }
-        span[lang="de"], strong[lang="de"], p[lang="de"], li[lang="de"] { display: inline; }
-        span[lang="en"], strong[lang="en"], p[lang="en"], li[lang="en"] { display: none; }
+.tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
 
-        /* ENGLISH ACTIVE STATE */
-        .lang-en [lang="de"] { display: none !important; }
-        .lang-en [lang="en"] { display: block !important; }
-        .lang-en span[lang="en"], .lang-en strong[lang="en"], .lang-en p[lang="en"], .lang-en li[lang="en"] { display: inline !important; }
+.tag {
+  background: #edf5f2;
+  color: var(--primary-green);
+  padding: 6px 12px;
+  border-radius: 50px;
+  font-size: 0.82rem;
+  border: 1px solid rgba(75, 119, 102, 0.2);
+}
 
-        @media (max-width: 768px) {
-            .sec-grid {
-                grid-template-columns: 1fr;
-                gap: 10px;
-            }
-            .header-section {
-                flex-direction: column-reverse;
-                text-align: center;
-            }
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+.highlight-item {
+  margin-bottom: 18px;
+}
+
+.highlight-item strong {
+  display: block;
+  font-size: 1rem;
+  color: var(--primary-green);
+  margin-bottom: 4px;
+}
+
+.highlight-item span {
+  color: #555;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+/* --- TESTIMONIAL / QUOTE --- */
+.quote-text {
+  font-size: 1.25rem;
+  color: var(--text-dark);
+  font-weight: 300;
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+}
+
+.quote-author {
+  font-size: 0.95rem;
+  color: var(--primary-green);
+  font-weight: 600;
+}
+
+.quote-author span {
+  font-weight: 400;
+  color: var(--text-muted);
+  display: block;
+  margin-top: 4px;
+}
+
+/* --- LANGUAGE VISIBILITY ARCHITECTURE --- */
+.lang-content {
+  display: none;
+}
+
+body.lang-en .lang-content.lang-en { display: inline-block; }
+body.lang-de .lang-content.lang-de { display: inline-block; }
+
+body.lang-en ul.lang-content.lang-en, body.lang-en div.lang-content.lang-en, body.lang-en p.lang-content.lang-en { display: block; }
+body.lang-de ul.lang-content.lang-de, body.lang-de div.lang-content.lang-de, body.lang-de p.lang-content.lang-de { display: block; }
+
+/* Responsive Layout */
+@media (max-width: 900px) {
+  header {
+    flex-direction: column;
+    padding: 40px 5% 50px 5%;
+    text-align: center;
+    gap: 30px;
+  }
+  .section-container {
+    grid-template-columns: 1fr;
+    padding: 50px 5%;
+    gap: 30px;
+  }
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  .timeline-item {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+}
+</style>
 </head>
-<body>
+<body class="lang-en">
 
-    <div class="cv-container">
-        <!-- LANG SWITCHER -->
-        <div class="lang-switcher">
-            <button class="btn" id="langToggle" onclick="toggleLanguage()">EN</button>
-        </div>
+ <div class="lang-switcher">
+   <button class="lang-btn active" onclick="switchLanguage('en')">EN</button>
+   <button class="lang-btn" onclick="switchLanguage('de')">DE</button>
+ </div>
 
-        <!-- HEADER SECTION -->
-        <header class="header-section">
-            <div class="header-text">
-                <h1>Tania Ferreira</h1>
-                <div class="subtitle">
-                    <span lang="de">Projektleiterin & Operations Managerin</span>
-                    <span lang="en">Operations & Project Leader</span>
-                </div>
-                <div class="contact-info">
-                    <p>📍 Düsseldorf, Germany</p>
-                    <p>✉️ taniaferreira.cv@gmail.com | 📞 +49 (0) 15510079734</p>
-                </div>
-            </div>
-            <img class="profile-img" src="2.png" alt="Tania Ferreira">
-        </header>
+ <header>
+   <div class="profile-container">
+     <img class="profile-img" src="2.png" alt="Tania Ferreira">
+   </div>
+   <div class="header-text">
+     <p class="subtitle">
+       <span class="lang-content lang-en">Operations & Project Leader</span>
+       <span class="lang-content lang-de">Operations- & Projektleiterin</span>
+     </p>
+     <h1>Tania Ferreira</h1>
+     
+     <p class="tagline">
+       <span class="lang-content lang-en">Specializing in Process Optimization, Stakeholder Enablement & Impact-Driven Delivery</span>
+       <span class="lang-content lang-de">Spezialisiert auf Prozessoptimierung, Stakeholder-Befähigung & wirkungsorientierte Umsetzung</span>
+     </p>
+     
+     <p class="transition-statement">
+       <span class="lang-content lang-en">Transitioning enterprise leadership background into impact-driven sectors—focusing on health, wellness, humanitarian initiatives, and non-profit operations where human wellbeing is the core metric of success.</span>
+       <span class="lang-content lang-de">Übertragung von Führungserfahrung auf wirkungsorientierte Sektoren – mit Fokus auf Gesundheit, Wellness, humanitäre Initiativen und gemeinnützige Organisationen, bei denen das menschliche Wohlbefinden im Mittelpunkt steht.</span>
+     </p>
 
-        <!-- PROFESSIONAL SUMMARY -->
-        <section class="sec-grid">
-            <div class="sec-title">
-                <span lang="de">Über mich</span>
-                <span lang="en">About Me</span>
-            </div>
-            <div>
-                <p lang="en">Accomplished Leader with a decade of global experience orchestrating cross-functional programs across global markets. Proven track record bridging communication between non-tech & tech teams, streamlining operational work (change management, process analysis, behavior analysis) & cross-cultural integration.</p>
-                <p lang="de">Erfahrene Führungskraft mit über zehn Jahren Erfahrung in der Steuerung komplexer, funktionsübergreifender Programme in globalen Märkten. Nachgewiesene Erfolge bei der Koordination zwischen nicht-technischen und technischen Teams, der Optimierung von Betriebsablaufen (Change Management, Prozessanalyse, Verhaltensanalyse) und der interkulturellen Integration.</p>
-                <br>
-                <p lang="en">Transitioning into impactful roles focused on health, wellness, humanitarian initiatives, and the green economy—where human wellbeing is the core metric of success.</p>
-                <p lang="de">Übertragung von Führungserfahrung in wirkungsvolle Sektoren mit Fokus auf Gesundheit, Wellness, humanitäre Initiativen und die grüne Wirtschaft—Sektoren, bei denen das menschliche Wohlbefinden im Mittelpunkt steht.</p>
-            </div>
-        </section>
+     <div class="contact-info">
+       <p>📍 Düsseldorf, Germany</p>
+       <p>✉ taniaferreira.cv@gmail.com | 📞 +49 (0) 15510079734</p>
+     </div>
+   </div>
+ </header>
 
-        <!-- WORK EXPERIENCE -->
-        <section class="sec-grid">
-            <div class="sec-title">
-                <span lang="de">Berufserfahrung</span>
-                <span lang="en">Experience</span>
-            </div>
-            <div class="timeline">
-                <span class="hint-text">
-                    <span lang="de">💡 Klicken Sie auf eine Position, um Details ein- oder auszublenden.</span>
-                    <span lang="en">💡 Click on any job position to expand or collapse details.</span>
-                </span>
+ <!-- PROFESSIONAL SUMMARY -->
+ <section class="section-container white-bg">
+   <div class="section-title">
+     <h2>
+       <span class="lang-content lang-en">About Me</span>
+       <span class="lang-content lang-de">Über mich</span>
+     </h2>
+   </div>
+   <div>
+     <p class="lang-content lang-en" style="color: #444; line-height: 1.7;">
+       Accomplished Operations and Project Leader with over a decade of international experience orchestrating complex, cross-functional programs across global markets. Proven track record in bridging communication gaps between non-technical stakeholders and technical teams, streamlining operational workflows, and delivering human-centric solutions. Skilled in change management, user behavior analysis, and cross-cultural team enablement.
+     </p>
+     <p class="lang-content lang-de" style="color: #444; line-height: 1.7;">
+       Erfahrene Operations- und Projektleiterin mit über zehn Jahren internationaler Erfahrung in der Steuerung komplexer, fächerübergreifender Programme auf globalen Märkten. Nachgewiesene Erfolge bei der Überbrückung von Kommunikationslücken zwischen nicht-technischen Stakeholdern und technischen Teams, der Optimierung von Betriebsabläufen und der Bereitstellung menschenzentrierter Lösungen.
+     </p>
+   </div>
+ </section>
 
-                <!-- Role 1 -->
-                <div class="job-card open" onclick="toggleCard(this)">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">
-                                <span lang="de">Weiterbildung & Freiberufliche Beratung</span>
-                                <span lang="en">Professional Development & Independent Studies</span>
-                            </div>
-                            <div class="company-name">Independent</div>
-                        </div>
-                        <div class="job-period">
-                            10/2025 - <span lang="de">Heute</span><span lang="en">Present</span>
-                        </div>
-                    </div>
-                    <div class="job-details">
-                        <ul>
-                            <li lang="en">Advanced methodology for AI-assisted tools to enhance project efficiency.</li>
-                            <li lang="en">Interim Consulting: Main capabilities focus on freelancing structure, operational coordination & alignment towards achieving target outcomes.</li>
-                            <li lang="en">Dedicated German language acquisition (targeting B2 level) to facilitate smooth local integration.</li>
-                            <li lang="de">Vertiefung der Methodik für KI-gestützte Tools zur Effizienzsteigerung in Projekten.</li>
-                            <li lang="de">Interim-Beratung: Freiberufliche Schwerpunkte liegen auf Prozessstruktur, operativer Abstimmung und Ausrichtung auf Zielergebnisse.</li>
-                            <li lang="de">Intensiver Erwerb der deutschen Sprachkenntnisse (Ziel B2-Niveau) für eine nahtlose Integration.</li>
-                        </ul>
-                    </div>
-                </div>
+ <!-- EXPERIENCE SECTION -->
+ <section class="section-container gray-bg" style="text-align: left; padding: 80px 10%;">
+   <div class="section-title">
+     <h2>
+       <span class="lang-content lang-en">Work Experience</span>
+       <span class="lang-content lang-de">Berufserfahrung</span>
+     </h2>
+   </div>
 
-                <!-- Role 2 -->
-                <div class="job-card" onclick="toggleCard(this)">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Director of Product Management</div>
-                            <div class="company-name">Choreograph (WPP)</div>
-                        </div>
-                        <div class="job-period">09/2021 - 01/2025</div>
-                    </div>
-                    <div class="job-details">
-                        <ul>
-                            <li lang="en">End-to-End Lifecycle: Drove full product lifecycle from concept to deployment for a predictive customer profiling application.</li>
-                            <li lang="en">Agile Frameworks: Applied Scrum/Kanban practices including sprint planning, backlog grooming, prioritization, story drafting, and daily standups.</li>
-                            <li lang="en">Led cross-functional teams of up to 15 members (POs, developers, UX designers, Data Scientists) across multiple time zones (US, Europe, India).</li>
-                            <li lang="en">Transformed fragmented tools into a unified, compliant architecture; surveyed user base to establish shared consensus on roadmap priorities.</li>
-                            <li lang="en">Built complete lifecycle from scratch for newsletter, roadmap vision boards, and user surveys.</li>
-                            <li lang="en">Mentorship & Enablement: Executed day-to-day team mentoring, driving high delivery standards.</li>
-                            <li lang="de">End-to-End Produktlebenszyklus: Verantwortung des gesamten Lebenszyklus von der Konzeption bis zum weltweiten Einsatz einer Anwendung zur prädiktiven Kundenprofilierung.</li>
-                            <li lang="de">Agile Frameworks: Durchführung agiler Aktivitäten wie Sprint-Planung, Backlog-Pflege, Priorisierung, User Stories und Daily Standups.</li>
-                            <li lang="de">Führung funktionsübergreifender Teams von bis zu 15 Mitgliedern (POs, Entwickler, UX-Designer, Data Scientists) über mehrere Zeitzonen hinweg (USA, Europa, Indien).</li>
-                            <li lang="de">Zusammenführung isolierter Tools in eine einheitliche Architektur; Befragung der Nutzerbasis zur Konsensfindung bei Roadmap-Prioritäten.</li>
-                            <li lang="de">Aufbau des kompletten Lebenszyklus für Newsletter, Roadmap-Vision-Boards und Umfragen.</li>
-                            <li lang="de">Mentoring & Befähigung: Tägliches Team-Mentoring zur Sicherung hoher Lieferstandards.</li>
-                        </ul>
-                    </div>
-                </div>
+   <div class="timeline">
 
-                <!-- Role 3 -->
-                <div class="job-card" onclick="toggleCard(this)">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Senior Solutions & Platform Manager</div>
-                            <div class="company-name">GroupM (WPP)</div>
-                        </div>
-                        <div class="job-period">11/2018 - 09/2021</div>
-                    </div>
-                    <div class="job-details">
-                        <ul>
-                            <li lang="en">Platform Strategy: Owned product solutions across 50+ markets, driving agency platform adoption and data strategy.</li>
-                            <li lang="en">Localization & Requirements: Liaised with engineering teams to integrate real user stories and feedback into global roadmaps.</li>
-                            <li lang="en">Feature Rollout: Facilitated feature rollouts and localized adaptations based on market feedback.</li>
-                            <li lang="en">Onboarding & Training: Delivered enablement programs for global teams, contributing to scalable product growth.</li>
-                            <li lang="de">Plattformstrategie: Verantwortung für Produktlösungen in über 50 Märkten; Förderung der Plattform-Adoption und Datenstrategie für Agenturen.</li>
-                            <li lang="de">Lokalisierung & Anforderungen: Schnittstelle zu Engineering-Teams zur Integration realer User Stories und Feedback in die globale Roadmap.</li>
-                            <li lang="de">Feature-Rollout: Koordination von Feature-Rollouts und lokalen Anpassungen basierend auf Marktfeedback.</li>
-                            <li lang="de">Onboarding & Schulung: Konzeption und Durchführung von Befähigungsprogrammen für globale Teams.</li>
-                        </ul>
-                    </div>
-                </div>
+     <!-- Role 1 -->
+     <div class="timeline-item open" onclick="toggleCard(this)">
+       <div class="time-period">
+         <span class="lang-content lang-en">10/2025 — Present<br><small>Düsseldorf</small></span>
+         <span class="lang-content lang-de">10/2025 — Heute<br><small>Düsseldorf</small></span>
+       </div>
+       <div class="timeline-content">
+         <h3>
+           <span class="lang-content lang-en">Operations Specialist & Professional Development</span>
+           <span class="lang-content lang-de">Operations Specialist & Weiterbildung</span>
+         </h3>
+         <span class="company">Cross-Cultural Skills Development & Independent Studies</span>
+         <div class="timeline-details">
+           <ul class="lang-content lang-en">
+             <li><strong>Technology for Operations:</strong> Completed independent coursework in AI-assisted workflows and modern operational tools to enhance administrative and project efficiency.</li>
+             <li><strong>Interim Consulting:</strong> Maintained operational capability for freelance/interim project support focused on organizational structure, workflow coordination, and stakeholder alignment.</li>
+             <li><strong>Language & Cultural Integration:</strong> Dedicated intensive focus toward achieving professional proficiency in German (targeting B2 level) to facilitate seamless integration into local German organizations and communities.</li>
+           </ul>
+           <ul class="lang-content lang-de">
+             <li><strong>Technologie für Operations:</strong> Kurse zu KI-unterstützten Workflows und modernen betrieblichen Tools zur Effizienzsteigerung.</li>
+             <li><strong>Interim-Beratung:</strong> Freiberufliche Unterstützung mit Schwerpunkt auf Organisationsstruktur, Workflow-Koordination und Stakeholder-Abstimmung.</li>
+             <li><strong>Sprachintegration:</strong> Intensiver Fokus auf den Erwerb professioneller Deutschkenntnisse (Ziel B2-Niveau) zur nahtlosen Integration.</li>
+           </ul>
+         </div>
+       </div>
+     </div>
 
-                <!-- Role 4 -->
-                <div class="job-card" onclick="toggleCard(this)">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Process Management Consultant (Retail Excellence)</div>
-                            <div class="company-name">Spark44 GmbH (Jaguar Land Rover)</div>
-                        </div>
-                        <div class="job-period">07/2015 - 10/2018</div>
-                    </div>
-                    <div class="job-details">
-                        <ul>
-                            <li lang="en">Process Audit: Analyzed lead management processes across six European markets, from first customer contact to final sale.</li>
-                            <li lang="en">Omnichannel Mapping: Mapped touchpoints across dealerships, online channels, and events (e.g., car shows).</li>
-                            <li lang="en">Gap Diagnosis: Identified communication gaps between teams and missing holistic client view.</li>
-                            <li lang="en">Recommendations: Proposed new workflows, CRM integration, and database connections to improve transparency.</li>
-                            <li lang="en">Conversion Practices: Developed improved conversion practices in existing channels to strengthen lead retention and tracking.</li>
-                            <li lang="de">Prozess-Audit: Analyse von Lead-Management-Prozessen in sechs europäischen Märkten, vom Erstkontakt bis zum Kaufabschluss.</li>
-                            <li lang="de">Omnichannel-Mapping: Mapping aller Touchpoints über Händlernetzwerke, Online-Kanäle und Events hinweg.</li>
-                            <li lang="de">Schwachstellenanalyse: Identifikation von Defiziten in der teamübergreifenden Kommunikation und Optimierung der Kundensicht.</li>
-                            <li lang="de">Empfehlungen: Vorschlag neuer Workflows, CRM-Integrationen und Datenbankverbindungen zur Erhöhung der Transparenz.</li>
-                            <li lang="de">Verkaufspraxis: Entwicklung verbesserter Konversionspraktiken in bestehenden Kanälen.</li>
-                        </ul>
-                    </div>
-                </div>
+     <!-- Role 2 -->
+     <div class="timeline-item" onclick="toggleCard(this)">
+       <div class="time-period">
+         <span class="lang-content lang-en">09/2021 — 01/2025<br><small>Düsseldorf</small></span>
+         <span class="lang-content lang-de">09/2021 — 01/2025<br><small>Düsseldorf</small></span>
+       </div>
+       <div class="timeline-content">
+         <h3>
+           <span class="lang-content lang-en">Director of Product Management</span>
+           <span class="lang-content lang-de">Director of Product Management</span>
+         </h3>
+         <span class="company">Choreograph (WPP)</span>
+         <div class="timeline-details">
+           <ul class="lang-content lang-en">
+             <li><strong>End-to-End Product Lifecycle & Delivery:</strong> Drove full product lifecycle management from concept to global deployment for a predictive customer profiling application.</li>
+             <li><strong>Agile Frameworks & Scrum Engine:</strong> Ran core product operations including sprint planning, backlog grooming and prioritization, user story drafting, refinement meetings, and daily standups.</li>
+             <li><strong>Cross-Functional Coordination:</strong> Led a global, cross-functional team of 15 members (POs, Engineers, UX designers, Data Scientists) across multiple time zones (US, Europe, India).</li>
+             <li><strong>Organizational Change Management:</strong> Managed the transition from fragmented local tools to a unified global structure, conducting extensive user research and surveys across regional teams to establish shared consensus and minimize operational disruption.</li>
+             <li><strong>Stakeholder Enablement & Transparency:</strong> Built complete internal communication frameworks from scratch—including newsletters, roadmap visibility boards, and deployment tracking to ensure operational alignment across global hubs.</li>
+             <li><strong>Team Mentorship:</strong> Onboarded, trained, and mentored junior team members on operational processes, sprint execution, and day-to-day coordination.</li>
+           </ul>
+           <ul class="lang-content lang-de">
+             <li><strong>Produktlebenszyklus & Delivery:</strong> Steuerung des gesamten Produktlebenszyklus von der Konzeption bis zum globalen Einsatz.</li>
+             <li><strong>Agile Frameworks & Scrum:</strong> Durchführung aller Kernaktivitäten wie Sprint-Planung, Backlog-Pflege, User Stories und Standups.</li>
+             <li><strong>Funktionsübergreifende Koordination:</strong> Führung eines globalen Teams von 15 Mitgliedern (POs, Entwickler, UX, Data Scientists) über mehrere Zeitzonen.</li>
+             <li><strong>Change Management:</strong> Steuerung des Übergangs von fragmentierten lokalen Tools zu einer einheitlichen globalen Struktur.</li>
+             <li><strong>Stakeholder-Befähigung:</strong> Aufbau interner Kommunikationsstrukturen wie Newsletter und Roadmap-Boards.</li>
+             <li><strong>Mentoring:</strong> Onboarding, Schulung und Mentoring von Juniormitgliedern.</li>
+           </ul>
+         </div>
+       </div>
+     </div>
 
-                <!-- Role 5 -->
-                <div class="job-card" onclick="toggleCard(this)">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Digital Account & Project Manager</div>
-                            <div class="company-name">Spark44 GmbH (Jaguar Land Rover)</div>
-                        </div>
-                        <div class="job-period">07/2015 - 10/2018</div>
-                    </div>
-                    <div class="job-details">
-                        <ul>
-                            <li lang="en">Portfolio Management: Managed digital initiatives across European markets including CRM, after-sales, and content platforms.</li>
-                            <li lang="en">eCommerce & Content: Led the After Sales E-Commerce platform and Owners Club content delivery.</li>
-                            <li lang="en">Analytics & Optimization: Coordinated analytics for campaign dashboards and optimized conversion KPIs.</li>
-                            <li lang="de">Portfolio-Management: Steuerung digitaler Initiativen in europäischen Märkten (CRM, After-Sales, Content-Plattformen).</li>
-                            <li lang="de">eCommerce & Content: Leitung der After-Sales-eCommerce-Plattform und der Content-Bereitstellung für den Owners Club.</li>
-                            <li lang="de">Analytics & Optimierung: Koordination von Analytics für Kampagnen-Dashboards und Conversion-KPIs.</li>
-                        </ul>
-                    </div>
-                </div>
+     <!-- Role 3 -->
+     <div class="timeline-item" onclick="toggleCard(this)">
+       <div class="time-period">
+         <span class="lang-content lang-en">11/2018 — 09/2021<br><small>Düsseldorf</small></span>
+         <span class="lang-content lang-de">11/2018 — 09/2021<br><small>Düsseldorf</small></span>
+       </div>
+       <div class="timeline-content">
+         <h3>
+           <span class="lang-content lang-en">Senior Solutions & Platform Manager</span>
+           <span class="lang-content lang-de">Senior Solutions & Platform Manager</span>
+         </h3>
+         <span class="company">GroupM (WPP)</span>
+         <div class="timeline-details">
+           <ul class="lang-content lang-en">
+             <li><strong>Global Platform Ownership & Strategy:</strong> Owned product solutions across 50+ markets, driving platform adoption and data strategy for agencies.</li>
+             <li><strong>Technical Roadmap & Requirements:</strong> Liaised with the engineering and product team to include real user stories to the global roadmap.</li>
+             <li><strong>Localization & Feature Rollouts:</strong> Facilitated feature rollouts and localized adaptations based on client feedback.</li>
+             <li><strong>Global Onboarding & Enablement:</strong> Delivered onboarding and enablement for global teams, contributing to scalable product growth.</li>
+           </ul>
+           <ul class="lang-content lang-de">
+             <li><strong>Globale Plattformverantwortung:</strong> Verantwortung für Produktlösungen in über 50 Märkten; Förderung der Plattformadaption.</li>
+             <li><strong>Technische Roadmap:</strong> Integration realer User Stories in die globale Roadmap in Zusammenarbeit mit Technik und Produkt.</li>
+             <li><strong>Rollouts & Lokalisierung:</strong> Begleitung von Feature-Rollouts und lokalen Anpassungen basierend auf Kundenfeedback.</li>
+             <li><strong>Onboarding & Befähigung:</strong> Durchführung von Trainingsprogrammen für globale Teams.</li>
+           </ul>
+         </div>
+       </div>
+     </div>
 
-                <!-- Role 6 -->
-                <div class="job-card" onclick="toggleCard(this)">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Senior Account Manager</div>
-                            <div class="company-name">IgnitionOne</div>
-                        </div>
-                        <div class="job-period">07/2011 - 10/2014</div>
-                    </div>
-                    <div class="job-details">
-                        <ul>
-                            <li lang="en">Account Leadership: Managed client relationships and campaign execution across UK, Italy, and Brazil.</li>
-                            <li lang="en">Strategic Roadmap Input: Collected client feedback and user needs to inform product enhancements.</li>
-                            <li lang="en">A/B Testing: Designed and executed A/B test frameworks to validate new platform features.</li>
-                            <li lang="en">Cross-Functional Collaboration: Partnered with technical teams to implement changes that significantly boosted engagement and conversion rates.</li>
-                            <li lang="de">Kundenführung: Kundenmanagement und Kampagnenausführung in UK, Italien und Brasilien.</li>
-                            <li lang="de">Strategischer Input: Sammeln von Kundenfeedback und User Needs zur Definition von Produktverbesserungen.</li>
-                            <li lang="de">A/B-Testing: Konzeption und Durchführung von A/B-Testing-Frameworks zur Validierung neuer Features.</li>
-                            <li lang="de">Funktionsübergreifende Zusammenarbeit: Zusammenarbeit mit technischen Teams zur Erhöhung von Conversion und Engagement.</li>
-                        </ul>
-                    </div>
-                </div>
+     <!-- Role 4 -->
+     <div class="timeline-item" onclick="toggleCard(this)">
+       <div class="time-period">
+         <span class="lang-content lang-en">07/2015 — 10/2018<br><small>Frankfurt</small></span>
+         <span class="lang-content lang-de">07/2015 — 10/2018<br><small>Frankfurt</small></span>
+       </div>
+       <div class="timeline-content">
+         <h3>
+           <span class="lang-content lang-en">Process Management Consultant (80%)</span>
+           <span class="lang-content lang-de">Prozessmanagement-Beraterin (80%)</span>
+         </h3>
+         <span class="company">Spark44 GmbH (Jaguar Land Rover)</span>
+         <div class="timeline-details">
+           <ul class="lang-content lang-en">
+             <li><strong>End-to-End Process Audit:</strong> Analyzed lead management processes across six European markets, from first customer contact to final sale.</li>
+             <li><strong>Omnichannel Mapping:</strong> Mapped touchpoints across dealerships, online channels, and events (e.g., car shows).</li>
+             <li><strong>Gap Analysis & Diagnosis:</strong> Identified lack of cross-team communication and missing holistic client view.</li>
+             <li><strong>Workflow Optimization & Integration:</strong> Recommended new workflows, CRM integration, and database connections to improve transparency.</li>
+             <li><strong>Conversion Optimization & Tracking:</strong> Developed improved conversion practices within existing channels to strengthen lead retention and sales tracking.</li>
+           </ul>
+           <ul class="lang-content lang-de">
+             <li><strong>End-to-End Prozessaudit:</strong> Analyse von Lead-Management-Prozessen in sechs europäischen Märkten.</li>
+             <li><strong>Omnichannel-Mapping:</strong> Mapping aller Touchpoints über Händlernetzwerke, Online-Kanäle und Events.</li>
+             <li><strong>Schwachstellenanalyse:</strong> Identifikation von Lücken in der teamübergreifenden Kommunikation.</li>
+             <li><strong>Workflow-Optimierung:</strong> Empfehlungen für neue Workflows, CRM-Integrationen und Datenbankverbindungen.</li>
+             <li><strong>Konversionsoptimierung:</strong> Entwicklung verbesserter Praktiken zur Lead-Retention und Verkaufsverfolgung.</li>
+           </ul>
+         </div>
+       </div>
+     </div>
 
-                <!-- Role 7 -->
-                <div class="job-card" onclick="toggleCard(this)">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Freelance Account Manager & Event Planner</div>
-                            <div class="company-name">Various Projects</div>
-                        </div>
-                        <div class="job-period">2007 - 2011</div>
-                    </div>
-                    <div class="job-details">
-                        <ul>
-                            <li lang="en">Spearheaded advertising, branding, and cultural events, including gallery exhibitions and local marketing campaigns.</li>
-                            <li lang="en">Coordinated PR activities, art curation, and community communications.</li>
-                            <li lang="de">Leitung von Werbe-, Branding- und Kulturveranstaltungen, einschließlich Galerieausstellungen und lokaler Marketingkampagnen.</li>
-                            <li lang="de">Koordination von PR-Aktivitäten, Kunstkuratierung und Community-Kommunikation.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+     <!-- Role 5 -->
+     <div class="timeline-item" onclick="toggleCard(this)">
+       <div class="time-period">
+         <span class="lang-content lang-en">07/2015 — 10/2018<br><small>Frankfurt</small></span>
+         <span class="lang-content lang-de">07/2015 — 10/2018<br><small>Frankfurt</small></span>
+       </div>
+       <div class="timeline-content">
+         <h3>
+           <span class="lang-content lang-en">Digital Account & Project Manager (20%)</span>
+           <span class="lang-content lang-de">Digital Account & Project Manager (20%)</span>
+         </h3>
+         <span class="company">Spark44 GmbH (Jaguar Land Rover)</span>
+         <div class="timeline-details">
+           <ul class="lang-content lang-en">
+             <li><strong>European Digital Portfolio Management:</strong> Oversaw digital initiatives across European markets including CRM, after-sales, and content platforms.</li>
+             <li><strong>E-Commerce & Platform Operations:</strong> Led the After Sales eCommerce platform and Owners Club content delivery.</li>
+             <li><strong>Analytics & Performance Optimization:</strong> Coordinated analytics for campaign dashboards and optimized conversion KPIs.</li>
+           </ul>
+           <ul class="lang-content lang-de">
+             <li><strong>Digitales Portfoliomanagement:</strong> Steuerung digitaler Initiativen in europäischen Märkten (CRM, After-Sales, Content).</li>
+             <li><strong>E-Commerce & Plattformbetrieb:</strong> Leitung der After-Sales eCommerce-Plattform und Content-Bereitstellung.</li>
+             <li><strong>Analytics & Performance:</strong> Koordination von Analysen für Dashboards und Optimierung von KPIs.</li>
+           </ul>
+         </div>
+       </div>
+     </div>
 
-        <!-- CORE COMPETENCIES & EDUCATION -->
-        <section class="sec-grid">
-            <div class="sec-title">
-                <span lang="de">Kompetenzen & Bildung</span>
-                <span lang="en">Skills & Education</span>
-            </div>
-            <div>
-                <div class="skills-grid">
-                    <div class="skill-group">
-                        <h4>
-                            <span lang="de">Führung & Alignment</span>
-                            <span lang="en">Leadership & Alignment</span>
-                        </h4>
-                        <p>Cross-Functional Team Leadership, Stakeholder Management, Change Management</p>
-                    </div>
-                    <div class="skill-group">
-                        <h4>
-                            <span lang="de">Prozessanalyse</span>
-                            <span lang="en">Process Assessment</span>
-                        </h4>
-                        <p>Bedürfnisanalyse, Lead-Management-Audits, Operations Optimization</p>
-                    </div>
-                    <div class="skill-group">
-                        <h4>
-                            <span lang="de">Operative Exzellenz</span>
-                            <span lang="en">Operational Excellence</span>
-                        </h4>
-                        <p>Agile Methodologies (Scrum/Kanban), Resource Allocation, Cross-Border Project Delivery</p>
-                    </div>
-                    <div class="skill-group">
-                        <h4>
-                            <span lang="de">Problem-Solving</span>
-                            <span lang="en">Problem-Solving</span>
-                        </h4>
-                        <p>Bottleneck Diagnosis, User Journey Analysis, Strategic Alignment</p>
-                    </div>
-                </div>
+     <!-- Role 6 -->
+     <div class="timeline-item" onclick="toggleCard(this)">
+       <div class="time-period">
+         <span class="lang-content lang-en">07/2011 — 10/2014<br><small>London & Brussels</small></span>
+         <span class="lang-content lang-de">07/2011 — 10/2014<br><small>London & Brüssel</small></span>
+       </div>
+       <div class="timeline-content">
+         <h3>
+           <span class="lang-content lang-en">Senior Account Manager</span>
+           <span class="lang-content lang-de">Senior Account Manager</span>
+         </h3>
+         <span class="company">IgnitionOne (Promoted from Account Manager in Feb 2012)</span>
+         <div class="timeline-details">
+           <ul class="lang-content lang-en">
+             <li><strong>International Account Leadership:</strong> Managed global client portfolios across the UK, Italy, and Brazil, driving pre-sales, training, and long-term retention.</li>
+             <li><strong>User-Driven Product Requirements:</strong> Collected user feedback and drafted user stories to translate client needs into high-impact product enhancements.</li>
+             <li><strong>A/B Testing & Feature Optimization:</strong> Designed and executed structured A/B tests to validate new platform features prior to full deployment.</li>
+             <li><strong>Technical Collaboration & Results:</strong> Partnered with engineering teams to deploy optimizations that significantly improved user conversion and engagement metrics.</li>
+           </ul>
+           <ul class="lang-content lang-de">
+             <li><strong>Internationales Account Management:</strong> Betreuung globaler Kundenportfolios in UK, Italien und Brasilien.</li>
+             <li><strong>Nutzeranforderungen:</strong> Erfassung von Nutzerfeedback und Erstellung von User Stories für Produktverbesserungen.</li>
+             <li><strong>A/B-Testing & Optimierung:</strong> Konzeption und Durchführung strukturierter A/B-Tests vor dem Rollout.</li>
+             <li><strong>Technische Zusammenarbeit:</strong> Implementierung von Optimierungen in Zusammenarbeit mit Entwicklungsteams.</li>
+           </ul>
+         </div>
+       </div>
+     </div>
 
-                <br>
-                <div class="high-impact">
-                    <strong>
-                        <span lang="de">Globale Markterfahrung:</span>
-                        <span lang="en">Global Market Experience:</span>
-                    </strong>
-                    <span> Europe (UK, Germany, Italy), APAC, LatAm (Brazil).</span>
-                </div>
+     <!-- Role 7 -->
+     <div class="timeline-item" onclick="toggleCard(this)">
+       <div class="time-period">
+         <span class="lang-content lang-en">2007 — 2011<br><small>Dublin, Ireland</small></span>
+         <span class="lang-content lang-de">2007 — 2011<br><small>Dublin, Irland</small></span>
+       </div>
+       <div class="timeline-content">
+         <h3>
+           <span class="lang-content lang-en">Freelance Account Manager & Event Planner</span>
+           <span class="lang-content lang-de">Freiberuflicher Account Manager & Eventplaner</span>
+         </h3>
+         <span class="company">Various Projects</span>
+         <div class="timeline-details">
+           <ul class="lang-content lang-en">
+             <li><strong>Community Engagement:</strong> Spearheaded advertising, branding, and cultural events, including gallery exhibitions and local marketing campaigns.</li>
+             <li><strong>Public Relations:</strong> Coordinated PR activities, art curation, and community communications to strengthen visibility and audience engagement.</li>
+           </ul>
+           <ul class="lang-content lang-de">
+             <li><strong>Community-Engagement:</strong> Leitung von Werbe-, Branding- und Kulturveranstaltungen sowie lokalen Kampagnen.</li>
+             <li><strong>Public Relations:</strong> Koordination von PR-Aktivitäten, Kunstkuratierung und Community-Kommunikation.</li>
+           </ul>
+         </div>
+       </div>
+     </div>
 
-                <div class="high-impact">
-                    <strong>
-                        <span lang="de">Sprachen:</span>
-                        <span lang="en">Languages:</span>
-                    </strong>
-                    <p lang="de">Portugiesisch (Muttersprache), Englisch (Fließend), Deutsch (B1/B2 in Arbeit), Französisch (Mittelstufe).</p>
-                    <p lang="en">Fluent Portuguese & English; German B2 (in progress); Conversational French.</p>
-                </div>
+   </div>
+ </section>
 
-                <div class="high-impact">
-                    <strong>
-                        <span lang="de">Ausbildung:</span>
-                        <span lang="en">Education:</span>
-                    </strong>
-                    <p>B.A. Communication & Multimedia – Instituto Superior da Maia (ISMAI), Portugal</p>
-                </div>
+ <!-- CORE COMPETENCIES & EDUCATION -->
+ <section class="section-container white-bg">
+   <div class="section-title">
+     <h2>
+       <span class="lang-content lang-en">Skills & Education</span>
+       <span class="lang-content lang-de">Kompetenzen & Bildung</span>
+     </h2>
+   </div>
+   <div class="skills-grid">
+     
+     <div class="skill-group">
+       <h3>
+         <span class="lang-content lang-en">Program Leadership</span>
+         <span class="lang-content lang-de">Programmführung</span>
+       </h3>
+       <ul class="lang-content lang-en">
+         <li>Stakeholder Alignment</li>
+         <li>Change Management</li>
+         <li>Cross-Functional Team Coordination</li>
+         <li>Needs Assessment</li>
+       </ul>
+       <ul class="lang-content lang-de">
+         <li>Stakeholder-Abstimmung</li>
+         <li>Change Management</li>
+         <li>Funktionsübergreifende Teamkoordination</li>
+         <li>Bedarfsanalyse</li>
+       </ul>
+     </div>
 
-                <div class="high-impact">
-                    <strong>
-                        <span lang="de">Zertifizierungen & Kurse:</span>
-                        <span lang="en">Certifications & Learning:</span>
-                    </strong>
-                    <ul>
-                        <li>Max Build Impactful Products with Pendo (Pendo.io)</li>
-                        <li>Exam Prep: Scrum Master (PSM I) & Product Owner (PSPO I) (Scrum.org)</li>
-                        <li>AI-Assisted Project Management Tools (LinkedIn Learning / Independent) - Ongoing</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+     <div class="skill-group">
+       <h3>
+         <span class="lang-content lang-en">Operational Excellence</span>
+         <span class="lang-content lang-de">Operative Exzellenz</span>
+       </h3>
+       <ul class="lang-content lang-en">
+         <li>Workflow & Process Optimization</li>
+         <li>Resource Allocation</li>
+         <li>Complex Problem-Solving</li>
+         <li>Bottleneck Identification</li>
+       </ul>
+       <ul class="lang-content lang-de">
+         <li>Prozess- & Workflow-Optimierung</li>
+         <li>Ressourcenallokation</li>
+         <li>Komplexe Problemlösung</li>
+         <li>Engpassidentifikation</li>
+       </ul>
+     </div>
 
-        <!-- FOOTER STATEMENT -->
-        <section class="sec-grid">
-            <div class="sec-title">
-                <span lang="de">Philosophie</span>
-                <span lang="en">Philosophy</span>
-            </div>
-            <div>
-                <p lang="de">"Menschliches Wohlbefinden und sinnvolle Ergebnisse stehen im Mittelpunkt meiner Arbeit."</p>
-                <p lang="en">"Committed to balancing operational rigor with empathy, aiming to build meaningful, sustainable outcomes."</p>
-            </div>
-        </section>
-    </div>
+     <div class="skill-group">
+       <h3>
+         <span class="lang-content lang-en">User & Community Engagement</span>
+         <span class="lang-content lang-de">User & Community Engagement</span>
+       </h3>
+       <ul class="lang-content lang-en">
+         <li>User Journey Mapping</li>
+         <li>Behavioral Analysis</li>
+         <li>Training & Enablement</li>
+         <li>Cross-Cultural Communication (Europe, US, APAC, LatAm)</li>
+       </ul>
+       <ul class="lang-content lang-de">
+         <li>User Journey Mapping</li>
+         <li>Verhaltensanalyse</li>
+         <li>Schulung & Befähigung</li>
+         <li>Interkulturelle Kommunikation</li>
+       </ul>
+     </div>
 
-    <!-- SCRIPT FOR CARD TOGGLE & LANGUAGE SWITCH -->
-    <script>
-        function toggleCard(card) {
-            if (card.classList.contains('no-toggle')) return;
-            
-            const isOpen = card.classList.contains('open');
-            const details = card.querySelector('.job-details');
-            
-            if (isOpen) {
-                card.classList.remove('open');
-                details.style.maxHeight = null;
-            } else {
-                card.classList.add('open');
-                details.style.maxHeight = details.scrollHeight + "px";
-            }
-        }
+     <div class="skill-group">
+       <h3>
+         <span class="lang-content lang-en">Agile & Project Execution</span>
+         <span class="lang-content lang-de">Agile & Projektumsetzung</span>
+       </h3>
+       <ul class="lang-content lang-en">
+         <li>Roadmap Execution</li>
+         <li>Backlog Prioritization</li>
+         <li>Risk Mitigation</li>
+         <li>Inter-Departmental Facilitation</li>
+       </ul>
+       <ul class="lang-content lang-de">
+         <li>Roadmap-Umsetzung</li>
+         <li>Backlog-Priorisierung</li>
+         <li>Risikominimierung</li>
+         <li>Abteilungsübergreifende Moderation</li>
+       </ul>
+     </div>
 
-        function toggleLanguage() {
-            const body = document.body;
-            const btn = document.getElementById('langToggle');
-            
-            if (body.classList.contains('lang-en')) {
-                body.classList.remove('lang-en');
-                btn.innerHTML = 'EN';
-            } else {
-                body.classList.add('lang-en');
-                btn.innerHTML = 'DE';
-            }
-        }
+     <div class="skill-group">
+       <h3>
+         <span class="lang-content lang-en">Languages</span>
+         <span class="lang-content lang-de">Sprachen</span>
+       </h3>
+       <ul class="lang-content lang-en">
+         <li><strong>English:</strong> Fluent</li>
+         <li><strong>Portuguese:</strong> Native</li>
+         <li><strong>German:</strong> B2 (In Progress)</li>
+         <li><strong>Spanish:</strong> Upper Intermediate</li>
+         <li><strong>French:</strong> Intermediate</li>
+       </ul>
+       <ul class="lang-content lang-de">
+         <li><strong>Englisch:</strong> Fließend</li>
+         <li><strong>Portugiesisch:</strong> Muttersprache</li>
+         <li><strong>Deutsch:</strong> B2 (In Bearbeitung)</li>
+         <li><strong>Spanisch:</strong> Obere Mittelstufe</li>
+         <li><strong>Französisch:</strong> Mittelstufe</li>
+       </ul>
+     </div>
 
-        // Initialize scroll heights for pre-opened cards
-        window.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.job-card.open').forEach(card => {
-                const details = card.querySelector('.job-details');
-                if (details) {
-                    details.style.maxHeight = details.scrollHeight + "px";
-                }
-            });
-        });
-    </script>
+     <div class="skill-group">
+       <h3>
+         <span class="lang-content lang-en">Education & Development</span>
+         <span class="lang-content lang-de">Ausbildung & Entwicklung</span>
+       </h3>
+       <div class="highlight-item lang-content lang-en">
+         <strong>B.A. Communication & Multimedia</strong>
+         <span>Instituto Superior da Maia (ISMAI), Portugal</span>
+       </div>
+       <div class="highlight-item lang-content lang-de">
+         <strong>B.A. Kommunikation & Multimedia</strong>
+         <span>Instituto Superior da Maia (ISMAI), Portugal</span>
+       </div>
+       
+       <strong style="color: var(--primary-green); font-size: 0.95rem; display: block; margin-top: 10px; margin-bottom: 6px;">
+         <span class="lang-content lang-en">Continuous Professional Development:</span>
+         <span class="lang-content lang-de">Kontinuierliche Weiterbildung:</span>
+       </strong>
+       <ul class="lang-content lang-en" style="font-size: 0.85rem; color: #555;">
+         <li>Maximize Productivity with AI Tools (Google)</li>
+         <li>Build Impactful AI Agents (Pendo)</li>
+         <li>AI Native Product Management (Pendo)</li>
+         <li>Practice Exam for Scrum.org PSPO I (Coursera)</li>
+         <li>Project Management Foundations (LinkedIn Learning - Ongoing)</li>
+         <li>German Language Studies (Targeting B2 Level - Ongoing)</li>
+       </ul>
+       <ul class="lang-content lang-de" style="font-size: 0.85rem; color: #555;">
+         <li>Maximize Productivity with AI Tools (Google)</li>
+         <li>Build Impactful AI Agents (Pendo)</li>
+         <li>AI Native Product Management (Pendo)</li>
+         <li>Praxisprüfung für Scrum.org PSPO I (Coursera)</li>
+         <li>Project Management Foundations (LinkedIn Learning)</li>
+         <li>Deutsch-Sprachstudium (Ziel B2-Niveau)</li>
+       </ul>
+     </div>
+
+   </div>
+ </section>
+
+ <!-- FOOTER STATEMENT -->
+ <section class="section-container gray-bg">
+   <div class="lang-content lang-en">
+     <p class="quote-text">
+       "Dedicated to building structure, clarity, and cross-cultural alignment within teams to deliver meaningful, human-centered outcomes."
+     </p>
+     <div class="quote-author">
+       Tania Ferreira
+       <span>Operations & Project Leader</span>
+     </div>
+   </div>
+   <div class="lang-content lang-de">
+     <p class="quote-text">
+       "Engagiert für den Aufbau von Struktur, Klarheit und interkultureller Abstimmung in Teams, um nachhaltige, menschenzentrierte Ergebnisse zu erzielen."
+     </p>
+     <div class="quote-author">
+       Tania Ferreira
+       <span>Operations- & Projektleiterin</span>
+     </div>
+   </div>
+ </section>
+
+ <script>
+ function toggleCard(cardElement) {
+   if (cardElement.classList.contains('no-toggle')) return;
+   cardElement.classList.toggle('open');
+   const details = cardElement.querySelector('.timeline-details');
+   if (details) {
+     if (cardElement.classList.contains('open')) {
+       details.style.maxHeight = details.scrollHeight + "px";
+     } else {
+       details.style.maxHeight = "0px";
+     }
+   }
+ }
+
+ function switchLanguage(lang) {
+   document.body.className = 'lang-' + lang;
+   document.querySelectorAll('.lang-btn').forEach(btn => {
+     btn.classList.remove('active');
+     if (btn.innerText.toLowerCase() === lang) {
+       btn.classList.add('active');
+     }
+   });
+ }
+
+ window.addEventListener('DOMContentLoaded', () => {
+   document.querySelectorAll('.timeline-item.open').forEach(item => {
+     const details = item.querySelector('.timeline-details');
+     if (details) {
+       details.style.maxHeight = details.scrollHeight + "px";
+     }
+   });
+ });
+ </script>
 </body>
 </html>
